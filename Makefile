@@ -8,3 +8,6 @@ c: prime.c
 
 clean:
 	rm -r a.out __pycache__
+
+test:
+	echo 'Not yet implemented.'
