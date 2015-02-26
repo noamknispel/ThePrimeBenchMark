@@ -7,7 +7,10 @@ c: prime.c
 	gcc --std=c99 -Wall -lm prime.c
 
 clean:
-	rm -r a.out __pycache__
+	- rm -fr a.out __pycache__
 
 test:
-	echo 'Not yet implemented.'
+	@ time -f "%C : %E seconds" ./a.out 100000 > /dev/null
+	@ time -f "%C : %E seconds"  ./prime.py 100000 > /dev/null
+	@ time -f "%C : %E seconds"  ./prime.lua 100000 > /dev/null
+	@ time -f "%C : %E seconds"  ./prime.php 100000 > /dev/null
