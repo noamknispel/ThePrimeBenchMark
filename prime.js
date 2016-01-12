@@ -12,7 +12,7 @@ function isPrime(num) {
 }
 
 var primes = []
-let i = 2;
+let i = 2
 
 while(primes.length < parseInt(process.argv[2])) {
   if(isPrime(i)) primes.push(i)
