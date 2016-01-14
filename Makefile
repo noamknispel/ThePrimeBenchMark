@@ -14,4 +14,5 @@ test:
 	@ time -f "%C : %E seconds" ./prime.py 100000 > /dev/null
 	@ time -f "%C : %E seconds" ./prime.lua 100000 > /dev/null
 	@ time -f "%C : %E seconds" ./prime.php 100000 > /dev/null
+	@ time -f "%C : %E seconds" ./prime.rb 100000 > /dev/null
 	@ time -f "%C : %E seconds" ./prime.js 100000 > /dev/null
