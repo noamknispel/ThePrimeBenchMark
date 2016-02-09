@@ -1,4 +1,5 @@
-#!/usr/bin/env node --use_strict
+#!/usr/bin/env node
+'use strict';
 
 function isPrime(num) {
   let num_sqr = Math.sqrt(num)
