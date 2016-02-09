@@ -12,6 +12,9 @@ Added languages
 - Lua
 - PHP
 - Python3
+- AWK
+- JS
+- Ruby
 
 Usage
 -----
