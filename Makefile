@@ -1,7 +1,7 @@
 all: python3 c
 
 python3: prime.py
-	pycompile -V 3.4 prime.py
+	py3compile -V 3.0- prime.py
 
 c: prime.c
 	gcc --std=c99 -Wall -lm prime.c
