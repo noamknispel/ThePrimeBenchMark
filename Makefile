@@ -9,10 +9,11 @@ c: prime.c
 clean:
 	- rm -fr a.out __pycache__
 
-test:
+test: all
 	@ time -f "%C : %E seconds" ./a.out 100000 > /dev/null
 	@ time -f "%C : %E seconds" ./prime.py 100000 > /dev/null
 	@ time -f "%C : %E seconds" ./prime.lua 100000 > /dev/null
 	@ time -f "%C : %E seconds" ./prime.php 100000 > /dev/null
 	@ time -f "%C : %E seconds" ./prime.rb 100000 > /dev/null
-	@ time -f "%C : %E seconds" ./prime.js 100000 > /dev/null
+	@ time -f "%C : %E seconds" node --use_strict prime.js 100000 > /dev/null
+	@ time -f "%C : %E seconds" ./prime.awk 100000 > /dev/null
