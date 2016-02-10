@@ -1,9 +1,14 @@
-.PHONY: all test clean c python3
+.PHONY: all test clean c python3 clojure
 ROUNDS = 100000
 
 c: a.out
 
 python3: __pycache__
+
+clojure: target/uberjar/prime.clj-0.1.0-SNAPSHOT-standalone.jar
+
+target/uberjar/prime.clj-0.1.0-SNAPSHOT-standalone.jar:
+	cd prime.clj; lein uberjar
 
 all: python3 c
 
@@ -15,9 +20,11 @@ a.out:
 
 clean:
 	- rm -fr a.out __pycache__
+	cd prime.clj; lein clean
 
 test: all
 	@ time -f "%C : %E seconds" ./a.out $(ROUNDS) > /dev/null
+	@ time -f "%C : %E seconds" java -jar prime.clj/target/uberjar/*-standalone.jar $(ROUNDS) > /dev/null
 	@ [ -n "$$(which python)" ] && time -f "%C : %E seconds" ./prime.py $(ROUNDS) > /dev/null
 	@ [ -n "$$(which python3)" ] && time -f "%C : %E seconds" python3 prime.py $(ROUNDS) > /dev/null
 	@ [ -n "$$(which pypy)" ] && time -f "%C : %E seconds" pypy  prime.py $(ROUNDS) > /dev/null
