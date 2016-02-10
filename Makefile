@@ -11,7 +11,7 @@ __pycache__:
 	py3compile -V 3.0- prime.py
 
 a.out:
-	gcc --std=c99 -Wall -lm prime.c
+	gcc --std=c99 -Wall -lm -O3 prime.c
 
 clean:
 	- rm -fr a.out __pycache__
