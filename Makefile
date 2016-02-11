@@ -1,6 +1,8 @@
 .PHONY: all test clean c python3 clojure
 ROUNDS = 100000
 
+all: python3 c clojure
+
 c: a.out
 
 python3: __pycache__
@@ -9,8 +11,6 @@ clojure: target/uberjar
 
 target/uberjar:
 	cd prime.clj; lein uberjar
-
-all: python3 c clojure
 
 __pycache__:
 	py3compile -V 3.0- prime.py
