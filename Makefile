@@ -5,12 +5,12 @@ c: a.out
 
 python3: __pycache__
 
-clojure: target/uberjar/prime.clj-0.1.0-SNAPSHOT-standalone.jar
+clojure: target/uberjar
 
-target/uberjar/prime.clj-0.1.0-SNAPSHOT-standalone.jar:
+target/uberjar:
 	cd prime.clj; lein uberjar
 
-all: python3 c
+all: python3 c clojure
 
 __pycache__:
 	py3compile -V 3.0- prime.py
