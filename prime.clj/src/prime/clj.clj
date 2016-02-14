@@ -4,11 +4,11 @@
 (require '[clojure.math.numeric-tower :as math])
 
 (defn prime? [x]
-  (cond
+  (if
     (integer? (math/sqrt x)) false
-    :else (every?
-            (fn [y] (not= (mod x y) 0))
-            (range 2 (math/ceil (math/sqrt x))))))
+    (every?
+       (fn [y] (not= (mod x y) 0))
+       (range 2 (math/ceil (math/sqrt x))))))
 
 
 (defn -main
