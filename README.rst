@@ -15,6 +15,7 @@ Added languages
 - AWK
 - JS
 - Ruby
+- Clojure
 
 Usage
 -----
