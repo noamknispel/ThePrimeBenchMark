@@ -35,3 +35,4 @@ test: all
 	@ [ -n "$$(which ruby)" ] && time -f "%C : %E seconds" ./prime.rb $(ROUNDS) > /dev/null
 	@ [ -n "$$(which node)" ] && time -f "%C : %E seconds" ./prime.js $(ROUNDS) > /dev/null
 	@ [ -x /usr/bin/awk ] && time -f "%C : %E seconds" ./prime.awk $(ROUNDS) > /dev/null
+	@ [ -n "$$(which tclsh)" ] && time -f "%C : %E seconds" ./prime.tcl $(ROUNDS) > /dev/null

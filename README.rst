@@ -16,6 +16,7 @@ Added languages
 - JS
 - Ruby
 - Clojure
+- TCL
 
 Usage
 -----
