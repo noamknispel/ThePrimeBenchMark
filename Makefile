@@ -1,19 +1,14 @@
-.PHONY: all test clean c python3 clojure
+.PHONY: all test clean c clojure
 ROUNDS = 100000
 
-all: python3 c clojure
+all: c clojure
 
 c: a.out
-
-python3: __pycache__
 
 clojure: target/uberjar
 
 target/uberjar:
 	cd prime.clj; lein uberjar
-
-__pycache__:
-	py3compile -V 3.0- prime.py
 
 a.out:
 	gcc --std=c99 -Wall -lm -O3 prime.c
