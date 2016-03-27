@@ -20,18 +20,23 @@ Added languages
 
 Usage
 -----
-Build: ::
+Build:
+.. code:: shell
 
     make
 
-Clean: ::
+Clean:
+.. code:: shell
 
     make clean
 
-Test: ::
+Test:
+.. code:: shell
 
     make test
 
+Also, Docker and Docker Compose are supported (so just run :code:
+`docker-compose up`).
 
 History
 -------
