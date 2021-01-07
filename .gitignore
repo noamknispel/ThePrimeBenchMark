@@ -2,3 +2,5 @@ a.out
 *.pyc
 __pycache__/*
 *.swp
+prime
+go

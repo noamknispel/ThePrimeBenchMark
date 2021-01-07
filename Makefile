@@ -1,10 +1,13 @@
 .PHONY: all test clean c clojure
-ROUNDS = 100000
+ROUNDS ?= 100000
 
-all: c clojure
+.PHONY: all
+all: c clojure go
 
+.PHONY: c
 c: a.out
 
+.PHONY: clojure
 clojure: target/uberjar
 
 target/uberjar:
@@ -13,10 +16,14 @@ target/uberjar:
 a.out:
 	gcc --std=c99 -Wall -lm -O3 prime.c
 
+.PHONY: clean
 clean:
-	- rm -fr a.out __pycache__
-	cd prime.clj; lein clean
+	git clean -fdX
 
+go: prime.go
+	go build -o go prime.go
+
+.PHONY: all
 test: all
 	@ time -f "%C : %E seconds" ./a.out $(ROUNDS) > /dev/null
 	@ time -f "%C : %E seconds" java -jar prime.clj/target/uberjar/*-standalone.jar $(ROUNDS) > /dev/null

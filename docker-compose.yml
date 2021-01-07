@@ -1,2 +1,6 @@
-testbed:
-    build: ./
+---
+version: '3'
+services:
+  estbed:
+    build:
+      context: ./
